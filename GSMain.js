@@ -1,48 +1,51 @@
+
+console.log("0 GSMAIN INIT")
+
+// https://discordjs.guide/additional-info/changes-in-v12.html#send
+
+// require express
+// require mongodb
+const settings = require('./settings.json')
+const fs = require("fs")
 const Discord = require("discord.js"); // discord client
 const client = new Discord.Client(); // discord client
-console.log("0 PAGER INIT")
-const settings = require('./settings.json')
-var exec = require('child_process').exec;
 
+require('./SYSTEM/events.js')(client); // ** sys/eventLoader
+
+var initDate = new Date();
 ////////////////////////////////////////////////////////////////////////////////
 client.login(settings.token);
 ////////////////////////////////////////////////////////////////////////////////
-client.on("ready", () => {
-  console.log("0 PAGER READY\n0 PAGER READY")
-  client.user.setPresence({ game: { name: `DM: page, who`, type: 0}})
-  client.user.setStatus("idle")
-});
-var Counter = 1
-var Who = '';
+
+
+// main -- commands
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+fs.readdir('./COMMAND/', (err, files) => { // ** main
+  if (err) console.err(err);
+  console.log(`${files.length} Plugins Found in ./COMMAND/`)
+  files.forEach(f => {
+    let fileread = require(`./COMMAND/${f}`);
+    var initEndDate = new Date();
+    console.log(`NODE: ${fileread.help.name} (${initEndDate.getTime() - initDate.getTime()}ms)`)
+    client.commands.set(fileread.help.name, fileread);
+    fileread.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, fileread.help.name);
+    })
+  })
+})
+
+
+client.elevation = message => {
+  let permlvl = 0;
+  if (message.author.id === settings.owner) permlvl = 4;
+  // at this point we are going to need MongoDB
+  //if (message.author.id === settings.jess) permlvl = 3;
+  return permlvl;
+}
+
+
 //let AlarmUp = new Set();
 ////////////////////////////////////////////////////////////////////////////////
-client.on("message", message => {
-  if (message.channel.type === "dm") {
-    if (message.author.bot) return;
-    if (message.content.toLowerCase() === "who") {
-      message.reply(`Last person to use: ${Who}`)
-
-    }
-    if (message.content.toLowerCase() === "page") {
-        let date_ob = new Date();
-        let hours = date_ob.getHours();
-        let minutes = date_ob.getMinutes();
-        let seconds = date_ob.getSeconds();
-        message.reply('Delivering alarm.\n\`System abuse may lead to having this privilege revoked.\`')
-        Who = message.author.tag;
-        LOGGED = `${Counter} :: ${message.author.tag} @ ${hours}:${minutes}:${seconds}`
-        console.log(LOGGED)
-        Counter = Counter+1
-        exec(`mpg123 '/home/cpi/program/gsnet/Tone-v2.mp3'`,
-      function(error, stdout, stderr) {
-        message.reply(`Alarm ended.`)
-      })
-
-    };
-  }
-  /////////////////////////////////////////////////////////////////////////////
-  //////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////
-})
 
 client.on('error', console.error)

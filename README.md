@@ -9,7 +9,7 @@ Follow the guide from https://zellwk.com/blog/crud-express-mongodb/ to produce a
 
 ## Dependencies
 
-![discord](https://img.shields.io/badge/Discord.js-From%20NPM-informational?logo=discord&style=plastic)
+![discord](https://img.shields.io/badge/Discord.js-From%20NPM%20v12-informational?logo=discord&style=plastic)
 ![mongodb](https://img.shields.io/badge/MongoDB-From%20NPM-informational?logo=mongodb&style=plastic)
 ![express](https://img.shields.io/badge/Express-From%20NPM-informational?logo=node.js&style=plastic)
 ![mpg123](https://img.shields.io/badge/mpg123-apt-informational?logo=linux&style=plastic)
