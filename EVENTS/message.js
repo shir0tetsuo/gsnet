@@ -53,6 +53,7 @@ module.exports = message => {
         let setDoc = client.db.collection('Users').doc(message.author.id).set(firedata)
 
         if (perms < cmd.conf.permLevel) return;
+        if (cmd.conf.enabled == false) return;
 
         console.log('ptime', (new Date()) - ActionTime.getTime())
         cmd.run(client, message, params, perms); // EXECUTE
@@ -63,6 +64,7 @@ module.exports = message => {
         if (!perms) perms = 0;
 
         if (perms < cmd.conf.permLevel) return;
+        if (cmd.conf.enabled == false) return;
 
         console.log('ptime', (new Date()) - ActionTime.getTime())
         cmd.run(client, message, params, perms); // EXECUTE

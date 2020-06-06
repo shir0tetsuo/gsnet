@@ -26,6 +26,13 @@ Produce a geolocation data matrix based on coordinates fed into Discord. Ease of
 * helpers (role id)
 * token (for discord bot)
 
+## User Data Organization Notice
+* Users/Zones
+* Zones > Zone ID
+
+## Pager Configuration
+Pager based on gsnotify, node should write to /home/cpi/GS.log, gsnotify job updates
+
 ## Dependencies
 
 ![discord](https://img.shields.io/badge/Discord.js-From%20NPM%20v12-informational?logo=discord&style=plastic)
