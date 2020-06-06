@@ -4,8 +4,27 @@ NodeJS Firebase Express Discord.js CRUD Application dubbed Global Shadownet or G
 ![node](https://img.shields.io/badge/Node-v10.19.0-yellowgreen?logo=node.js&style=plastic)
 ![phase](https://img.shields.io/badge/Phase-Active%20Development-important?logo=atom&style=plastic)
 
-# Plan
-Follow the guide from https://zellwk.com/blog/crud-express-mongodb/ to produce a geolocation data matrix based on coordinates fed into Discord. Ease of operation is necessary and intended.
+## Plan
+Produce a geolocation data matrix based on coordinates fed into Discord. Ease of operation is necessary and intended.
+
+## Structure
+* ASSET
+  * Images, CSS, HTML
+* COMMAND
+  * Modular Command Modules
+* EVENTS
+  * Discord API Events, Message/Auth to Database Handling
+* SYSTEM
+  * Recursive Matrices
+
+## settings.json
+* version
+* prefix (g.)
+* owner
+* adminrole (role id)
+* modrole (role id)
+* helpers (role id)
+* token (for discord bot)
 
 ## Dependencies
 
