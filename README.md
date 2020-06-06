@@ -1,5 +1,5 @@
 # gsnet
-NodeJS MongoDB Express Discord.js CRUD Application dubbed Global Shadownet or Gameshell Net
+NodeJS Firebase Express Discord.js CRUD Application dubbed Global Shadownet or Gameshell Net
 
 ![node](https://img.shields.io/badge/Node-v10.19.0-yellowgreen?logo=node.js&style=plastic)
 ![phase](https://img.shields.io/badge/Phase-Active%20Development-important?logo=atom&style=plastic)
