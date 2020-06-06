@@ -33,7 +33,7 @@ client.on("message", message => {
         LOGGED = `${Counter} :: ${message.author.tag} @ ${hours}:${minutes}:${seconds}`
         console.log(LOGGED)
         Counter = Counter+1
-        exec(`mpg123 '/home/cpi/program/nodejs/Tone-v2.mp3'`,
+        exec(`mpg123 '/home/cpi/program/gsnet/Tone-v2.mp3'`,
       function(error, stdout, stderr) {
         message.reply(`Alarm ended.`)
       })
