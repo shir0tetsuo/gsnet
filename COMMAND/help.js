@@ -12,7 +12,7 @@ exports.run = (client, message, params, perms) => {
     const goodCommands = client.commands.filter(cmd => cmd.conf.permLevel <= level && cmd.conf.enabled !== false)
     const commandNames = goodCommands.keyArray()
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-    let header = `= GSNet Commands (PERM ${perms}) =\n\n[Page ${page}, ${settings.prefix}help <commandname> for details]\n\n`;
+    let header = `= GSNet Commands (PERM ${perms} @ ${(new Date()) - message.ActionTime.getTime()}ms) =\n\n[Page ${page}, ${settings.prefix}help <commandname> for details]\n\n`;
     let output = ``
     goodCommands.forEach( c => {
       output += `${settings.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description} :: NONDM ${c.conf.guildOnly} PERM ${c.conf.permLevel}\n`

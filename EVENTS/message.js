@@ -8,6 +8,7 @@ let timeout = new Set();
 module.exports = message => {
   let ActionTime = new Date();
   let client = message.client;
+  message.ActionTime = ActionTime
   // client.db is firestore
   if (message.author.bot) return;
   if (message === null) return;
@@ -55,7 +56,6 @@ module.exports = message => {
         if (perms < cmd.conf.permLevel) return;
         if (cmd.conf.enabled == false) return;
 
-        console.log('ptime', (new Date()) - ActionTime.getTime())
         cmd.run(client, message, params, perms); // EXECUTE
 
       } else {
@@ -66,12 +66,11 @@ module.exports = message => {
         if (perms < cmd.conf.permLevel) return;
         if (cmd.conf.enabled == false) return;
 
-        console.log('ptime', (new Date()) - ActionTime.getTime())
         cmd.run(client, message, params, perms); // EXECUTE
       }
     })
     .catch(err => {
-      console.error('Document RCV or Command Execution Error', err);
+      console.error('Google Doc or Execution ERROR', err);
       process.exit();
     })
   }
