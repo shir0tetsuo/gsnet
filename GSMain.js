@@ -1,10 +1,11 @@
 const Discord = require("discord.js"); // discord client
 const client = new Discord.Client(); // discord client
 console.log("0 PAGER INIT")
+const settings = require('./settings.json')
 var exec = require('child_process').exec;
 
 ////////////////////////////////////////////////////////////////////////////////
-client.login("NzE3ODMzNjU5MjA1NTUwMTQw.XtgFDQ.9DhCDkfzsnbjF9RpaROBe6oUiuI");
+client.login(settings.token);
 ////////////////////////////////////////////////////////////////////////////////
 client.on("ready", () => {
   console.log("0 PAGER READY\n0 PAGER READY")
