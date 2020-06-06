@@ -12,6 +12,7 @@ Follow the guide from https://zellwk.com/blog/crud-express-mongodb/ to produce a
 ![discord](https://img.shields.io/badge/Discord.js-From%20NPM%20v12-informational?logo=discord&style=plastic)
 ![mongodb](https://img.shields.io/badge/MongoDB-From%20NPM-informational?logo=mongodb&style=plastic)
 ![express](https://img.shields.io/badge/Express-From%20NPM-informational?logo=node.js&style=plastic)
+![firebase](https://img.shields.io/badge/firebase%20admin-From%20NPM-informational?logo=firebase&style=plastic)
 ![mpg123](https://img.shields.io/badge/mpg123-apt-informational?logo=linux&style=plastic)
 
 ![Linux](https://img.shields.io/badge/Linux%20Operating%20System-Designed%20for%20the%20GameShell-important?logo=linux&style=plastic)

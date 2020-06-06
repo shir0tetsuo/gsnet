@@ -5,8 +5,8 @@ console.log("0 GSMAIN INIT")
 
 // require express
 // require mongodb
-const settings = require('./settings.json')
-const fs = require("fs")
+const settings = require('./settings.json') // settings
+const fs = require("fs") // filesystem mgmt
 const Discord = require("discord.js"); // discord client
 const client = new Discord.Client(); // discord client
 
@@ -15,6 +15,15 @@ require('./SYSTEM/events.js')(client); // ** sys/eventLoader
 var initDate = new Date();
 ////////////////////////////////////////////////////////////////////////////////
 client.login(settings.token);
+
+var admin = require("firebase-admin");
+
+var serviceAccount = require("FirebaseKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://gsnet-a64df.firebaseio.com"
+});
 ////////////////////////////////////////////////////////////////////////////////
 
 
