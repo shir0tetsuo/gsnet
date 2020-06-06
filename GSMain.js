@@ -16,14 +16,20 @@ var initDate = new Date();
 ////////////////////////////////////////////////////////////////////////////////
 client.login(settings.token);
 
+////////////
+// FIRESTORE
+////////////
 var admin = require("firebase-admin");
 
-var serviceAccount = require("FirebaseKey.json");
+var serviceAccount = require("./FirebaseKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://gsnet-a64df.firebaseio.com"
 });
+
+//const db = admin.firestore();
+client.db = admin.firestore();
 ////////////////////////////////////////////////////////////////////////////////
 
 
@@ -43,18 +49,6 @@ fs.readdir('./COMMAND/', (err, files) => { // ** main
     })
   })
 })
-
-
-client.elevation = message => {
-  let permlvl = 0;
-  if (message.author.id === settings.owner) permlvl = 4;
-  // at this point we are going to need MongoDB
-  //if (message.author.id === settings.jess) permlvl = 3;
-  return permlvl;
-}
-
-
-//let AlarmUp = new Set();
 ////////////////////////////////////////////////////////////////////////////////
 
 client.on('error', console.error)

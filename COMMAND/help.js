@@ -1,6 +1,5 @@
 const settings = require('../settings.json');
 exports.run = (client, message, params, perms) => {
-  console.log('SUCCESS')
   if (params[0] >= 2 || params[0] === 1 || !params[0]) {
     //const commandNames = Array.from(client.commands.keys());
     if (params[0] === undefined) {
@@ -8,7 +7,7 @@ exports.run = (client, message, params, perms) => {
     } else {
       var page = params[0]
     }
-    const level = client.elevation(message)
+    const level = perms
     // goodCommands = myCommands
     const goodCommands = client.commands.filter(cmd => cmd.conf.permLevel <= level && cmd.conf.enabled !== false)
     const commandNames = goodCommands.keyArray()
