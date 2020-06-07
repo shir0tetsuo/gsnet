@@ -32,6 +32,7 @@ module.exports = message => {
 // check user elevation
 
   if(cmd){
+    message.react('🥽')
     let perms = 0;
     if (cmd.conf.guildOnly == true && message.channel.type === "dm") return;
     client.db.collection('Users').doc(message.author.id).get()
