@@ -4,6 +4,17 @@ NodeJS Firebase Express Discord.js CRUD Application dubbed Global Shadownet or G
 ![node](https://img.shields.io/badge/Node-v10.19.0-yellowgreen?logo=node.js&style=plastic)
 ![phase](https://img.shields.io/badge/Phase-Active%20Development-important?logo=atom&style=plastic)
 
+# Purpose
+**Provide a "vibes" based coordinate reference platform allowing users to record psychic data on a geogrid position.**
+* (0) Users can take "ownership" of 50 zones.
+* (1) Helper+ users can create zone areas.
+* (2) Moderator+ users can lock users out from accessing the system.
+* (3) Administrators have the power to delete zones.
+* (4) Operators also have direct FireStore access, therefore have full CRUD permissions.
+
+## Development Tracking
+![](https://img.shields.io/badge/Authorizations-Permissions%20Overhaul-success?style=plastic)
+
 ## Plan
 Produce a geolocation data matrix based on coordinates fed into Discord. Ease of operation is necessary and intended.
 
