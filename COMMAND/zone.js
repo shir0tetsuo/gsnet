@@ -3,10 +3,18 @@ const Discord = require('discord.js')
 
 function pZone(client, message, params, perms) {
 
+  let stat_ownership = 303309686264954881
+  let stat_owner_tag = message.author.tag
+  let stat_indexed = new Date();
+  var ownership = '';
+  ownership += `\`\`\`diff\n+ ${stat_owner_tag}\n`
+  ownership += `${stat_ownership}\n`
+  ownership += `## ${stat_indexed}\`\`\``
+
   let stat_despair = 0
   let stat_love = 0
-  let stat_submission = 0
-  let stat_dominance = 0
+  let stat_powerless = 0
+  let stat_dominant = 0
   let stat_contempt = 0
   let stat_shivers = 0
   let stat_aggressive = 0
@@ -14,12 +22,13 @@ function pZone(client, message, params, perms) {
   var vibes = '';
   vibes += `:skull: \`${stat_despair}\` Despair\n`
   vibes += `:blue_heart: \`${stat_love}\` Love\n`
-  vibes += `:no_mouth: \`${stat_submission}\` Submission\n`
-  vibes += `:face_with_monocle: \`${stat_dominance}\` Dominance\n`
+  vibes += `:no_mouth: \`${stat_powerless}\` Powerless\n`
+  vibes += `:face_with_monocle: \`${stat_dominant}\` Dominant\n`
   vibes += `:smirk: \`${stat_contempt}\` Contempt\n`
   vibes += `:cold_face: \`${stat_shivers}\` Shivers\n`
   vibes += `:rage: \`${stat_aggressive}\` Aggression\n`
   vibes += `:cry: \`${stat_sentimental}\` Sentimental\n`
+
   let stat_psychic = 0
   let stat_psionic = 0
   let stat_et = 0
@@ -30,17 +39,16 @@ function pZone(client, message, params, perms) {
   let stat_em = 0
   let stat_cryptid = 0
   var anomaly = '';
-  anomaly += `:nazar: \`${stat_psychic}\` Psychic\n`
+  anomaly += `:nazar_amulet: \`${stat_psychic}\` Psychic\n`
   anomaly += `:rosette: \`${stat_psionic}\` Psychokinetic/Psionic`
   anomaly += `:ringed_planet: \`${stat_et}\` ET\n`
   anomaly += `:comet: \`${stat_cosmic}\` Cosmic\n`
   anomaly += `:dizzy: \`${stat_temporal}\` Temporal/Gravimetric\n`
   anomaly += `:raised_hand: \`${stat_spiritual}\` Spiritual\n`
   anomaly += `:stars: \`${stat_chi}\` Chi/Energy\n`
-  anomaly += `:zap: \`${stat_em}\` Electromagnetic`
+  anomaly += `:zap: \`${stat_em}\` Electromagnetic\n`
   anomaly += `:bat: \`${stat_cryptid}\` Cryptid\n`
   anomaly += `\`Indexed: June 6, 2020\``
-//  message.channel.send(vibes)
 
   const Embed = {
     color: 0x233f47,
@@ -92,60 +100,6 @@ function pZone(client, message, params, perms) {
   const ZComposite = new Discord.MessageAttachment('../ASSETS/gsnet.png');
 
   message.channel.send({ files: [ZComposite], embed: Embed })
-
-
-  //  return message.channel.send({
-  //    pZonePrint = {
-  //      color: 0x001347,
-  //      title: message.zone,
-  //      url: 'https://github.com/shir0tetsuo/gsnet',
-  //      author: {
-  //        name: 'GSNet',
-  //        icon_url: client.user.avatarURL({
-  //          dynamic: true
-  //        }),
-  //        url: 'https://github.com/shir0tetsuo/gsnet',
-  //      },
-  //      description: 'Zone Data',
-  //      thumbnail: {
-  //        url: 'https://i.imgur.com/wSTFkRM.png',
-  //      },
-  //      fields: [{
-  //          name: 'VIBES',
-  //          value: 'test',
-  //        },
-  //        {
-  //          name: '\u200b',
-  //          value: '\u200b',
-  //          inline: false,
-  //        },
-  //        {
-  //          name: 'Ownership',
-  //          value: 'Some value here',
-  //          inline: true,
-  //        },
-  //        {
-  //          name: 'Observations',
-  //          value: 'test',
-  //          inline: true,
-  //        },
-  //        {
-  //          name: 'Link',
-  //          value: `https://www.google.com/maps/@${message.zone},18z`,
-  //          inline: true,
-  //        },
-  //      ],
-  //      image: {
-  //        url: 'https://github.com/shir0tetsuo/gsnet/ASSET/gsnet.png',
-  //      },
-  //      timestamp: new Date(),
-  //      footer: {
-  //        text: message.author.tag,
-  //        icon_url: message.author.avatarURL({
-  //          dynamic: true
-  //        }),
-  //      }
-  //    }
 }
 
 function GenerationPrompt(client, message, params, perms) {
