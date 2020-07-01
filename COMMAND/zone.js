@@ -97,7 +97,7 @@ function pZone(client, message, params, perms) {
       icon_url: `${message.author.avatarURL()}`,
     },
   };
-  const ZComposite = new Discord.MessageAttachment('../ASSETS/gsnet.png');
+  const ZComposite = new Discord.MessageAttachment('./ASSET/gsnet.png');
 
   message.channel.send({ files: [ZComposite], embed: Embed })
 }
