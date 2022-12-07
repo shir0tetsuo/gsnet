@@ -5,7 +5,7 @@
   "main": "GSMain.js",
   "dependencies": {
     "discord.js": "^12.2.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "firebase-admin": "^8.12.1",
     "mongodb": "^3.5.8",
     "pg": "^8.2.1",
